@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "/auth";
+const API_URL = "https://appone-service.herokuapp.com/auth";
 
 const signup = (email, password) => {
   return axios
