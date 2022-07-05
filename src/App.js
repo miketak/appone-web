@@ -11,8 +11,8 @@ function App() {
     { url: "#", title: "Home" },
     { url: "#", title: "Trips" },
     { url: "#", title: "Rewards" },
-    { url: "#", title: "Login" },
-    { url: "#", title: "Signup" }
+    { url: "/login", title: "Login" },
+    { url: "/signup", title: "Signup" }
   ];
 
   return (
