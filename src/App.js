@@ -6,13 +6,33 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Slider from "./components/Slider";
 
+import AuthService from "./services/auth.service";
+// import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+
 function App() {
+  // const [currentUser, setCurrentUser] = useState(undefined);
+
+  // useEffect(() => {
+  //   const user = AuthService.getCurrentUser();
+
+  //   if (user) {
+  //     setCurrentUser(user);
+  //   }
+  // }, []);
+
+  const logOut = () => {
+    AuthService.logout();
+  };
+
   const navbarLinks = [
     { url: "#", title: "Home" },
     { url: "#", title: "Trips" },
     { url: "#", title: "Rewards" },
     { url: "/login", title: "Login" },
-    { url: "/signup", title: "Signup" }
+    { url: "/signup", title: "Signup", onClick: {logOut} }
   ];
 
   return (
@@ -32,6 +52,12 @@ function App() {
         subtitle={"Your dream vacation is only a few clicks away."}
         flipped={true}
       />
+      {/* <div className="container mt-3">
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </div> */}
     </div>
   );
 }
