@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
     return (
       <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <Link class="navbar-brand" to="/home">
             CNAYA'S TRAVEL PORTAL
-          </a>
+          </Link>
           <button
             class="navbar-toggler"
             type="button"
@@ -23,19 +24,19 @@ class Navbar extends Component {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
+                <Link class="nav-link active" to="/home">
                   Home
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <Link class="nav-link active" to="/login">
                   Login
-                </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Signup
-                </a>
+                <Link class="nav-link active" to="/signup">
+                  Sign Up
+                </Link>
               </li>
             </ul>
           </div>
