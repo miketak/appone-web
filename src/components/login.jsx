@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   render() {
@@ -27,6 +28,12 @@ class Login extends Component {
               id="exampleInputPassword1"
             />
           </div>
+          <Link class="nav-link active" to="/forgotPassword">
+            Forgot Password
+          </Link>
+          <Link class="nav-link active" to="/signup">
+            Sign Up
+          </Link>
           <button type="submit" class="btn btn-primary btn-dark">
             Log In
           </button>
