@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid">
-          <Link class="navbar-brand" to="/home">
+      <nav className="navbar navbar-expand-lg bg-dark">
+        <div className="container-fluid">
+          <Link className="navbar-brand" to="/home">
             CNAYA'S TRAVEL PORTAL
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -19,22 +19,22 @@ class Navbar extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <Link class="nav-link active" to="/home">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link active" to="/home">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link active" to="/login">
+              <li className="nav-item">
+                <Link className="nav-link active" to="/login">
                   Login
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link active" to="/signup">
+              <li className="nav-item">
+                <Link className="nav-link active" to="/signup">
                   Sign Up
                 </Link>
               </li>
