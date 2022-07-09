@@ -10,6 +10,7 @@ import NotFound from "./components/notfound";
 import Dashboard from "./components/dashboard";
 import ChangePassword from "./components/changePassword";
 import Quotations from "./components/quotations";
+import QuotationForm from "./components/quotationForm";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Quotations />} />
           <Route path="/dashboard/quotations" element={<Quotations />} />
+          <Route path="/dashboard/quotations/:id" element={<QuotationForm />} />
           <Route
             path="/dashboard/changepassword"
             element={<ChangePassword />}
