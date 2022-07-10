@@ -14,6 +14,8 @@ class Quotations extends Component {
   };
 
   componentDidMount() {
+    // const { data } = await getQuotations();
+    // this.setState({quotations: data})
     this.setState({ quotations: getQuotations() });
   }
 
