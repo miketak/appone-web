@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "./sidebar";
-import ChangePassword from "./changePassword";
+import ChangePassword from "./changePasswordForm";
 import Quotations from "./quotations";
 
 class Dashboard extends Component {

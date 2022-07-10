@@ -6,7 +6,7 @@ import SignupForm from "./components/signupForm";
 import ForgotPassword from "./components/forgotPassword";
 import NotFound from "./components/notfound";
 import Dashboard from "./components/dashboard";
-import ChangePassword from "./components/changePassword";
+import ChangePassword from "./components/changePasswordForm";
 import Quotations from "./components/quotations";
 import QuotationForm from "./components/quotationForm";
 import LoginForm from "./components/loginForm";
