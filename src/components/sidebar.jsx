@@ -1,15 +1,29 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import auth from "../services/authService";
 
 const SideBar = () => {
+  const { user } = auth.getCurrentUser();
   return (
-    <ul>
+    <ul className="navbar-nav">
       <li>
-        <Link to="/dashboard/quotations">View All Quotations</Link>
+        <div className="text-muted small fw-bold text-uppercase px-3 mb-3">
+          Welcome {user.name}
+        </div>
       </li>
       <li>
-        <Link to="/dashboard/changepassword">Change Password</Link>
+        <Link to="/dashboard/quotations" className="nav-link px-3">
+          View All Quotations
+        </Link>
+      </li>
+      <li>
+        <Link to="/dashboard/changepassword" className="nav-link px-3">
+          Change Password
+        </Link>
+      </li>
+      <li className="my-4">
+        <hr className="dropdown-divider bg-light" />
       </li>
     </ul>
   );

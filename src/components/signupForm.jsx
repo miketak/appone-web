@@ -25,12 +25,14 @@ class SignupForm extends Form {
       // Server on sign up should return just the access token.
       // When jwt is implemented, respone shall be extracted from either body or custom header
       // For now assuming response is the jwt or access token
+      console.log("Response now is the jwt of: " + response);
       auth.loginWithJwt(response);
 
       // signup should return a jwt as well, this should be stored in local storage too.
       // redirecting for now to dashboard
       // Assumption: If we are here, everything was successful.
-      this.props.history("/dashboard");
+      this.props.history("/dashboard", { replace: true });
+      window.location.reload();
     } catch (ex) {
       if (ex.response && ex.response.state === 400) {
         const errors = { ...this.state.errors };
@@ -42,7 +44,7 @@ class SignupForm extends Form {
 
   render() {
     return (
-      <div>
+      <div className="mt-5 pt-3">
         <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("email", "Email")}

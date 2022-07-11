@@ -27,7 +27,6 @@ class App extends Component {
 
   render() {
     const { user } = this.state;
-    console.log("User during App.js render: " + user);
     return (
       <React.Fragment>
         <ToastContainer />
