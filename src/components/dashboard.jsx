@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "./sidebar";
-import ChangePassword from "./changePasswordForm";
-import Quotations from "./quotations";
+import auth from "../services/authService";
 
 class Dashboard extends Component {
   state = {};
   render() {
+    const { user } = auth.getCurrentUser();
     return (
       <div>
-        <h2>My Dashboard</h2>
+        <h1>My Dashboard</h1>
+        <p>Welcome {user.name}!</p>
         <SideBar />
         <Outlet />
       </div>

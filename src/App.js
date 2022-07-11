@@ -35,6 +35,7 @@ class App extends Component {
         <main className="container">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="login" element={<LoginForm />} />
             <Route path="logout" element={<Logout />} />
             <Route path="signup" element={<SignupForm />} />
