@@ -9,7 +9,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h2>My Dashboard</h2>;
+        <h2>My Dashboard</h2>
         <SideBar />
         <Outlet />
       </div>

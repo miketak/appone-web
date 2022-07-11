@@ -11,3 +11,7 @@ export function signup(user) {
     name: user.name,
   });
 }
+
+export default {
+  signup,
+};

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Joi from "joi-browser";
+import { Redirect } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Joi from "joi-browser";
 import Form from "./common/form";
-import * as authService from "../services/authService";
-import { logger } from "@sentry/utils";
+import auth from "../services/authService";
 
 class LoginForm extends Form {
   state = {
@@ -19,13 +19,11 @@ class LoginForm extends Form {
   doSubmit = async () => {
     try {
       const { data } = this.state;
-      logger.log(data);
-      const { data: jwt } = await authService.login(data.email, data.password);
-
+      await auth.login(data.email, data.password);
       // TODO: Backend responds with a long whatsoever, change backend to respond
       // with error 400 and status message. At this point, login will always redirect
-      localStorage.setItem("token", jwt);
-      this.props.history("/dashboard");
+      this.props.navigate("/dashboard", { replace: true });
+      window.location.reload();
     } catch (ex) {
       if (ex.response && ex.response.state === 400) {
         const errors = { ...this.state.errors };
@@ -50,4 +48,4 @@ class LoginForm extends Form {
 }
 
 // TODO: Below is a hack. Fix this.
-export default () => <LoginForm history={useNavigate()} />;
+export default () => <LoginForm navigate={useNavigate()} />;

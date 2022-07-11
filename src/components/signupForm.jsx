@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import Joi from "joi-browser";
 import { useNavigate } from "react-router-dom";
 import Form from "./common/form";
-import * as userService from "../services/userService";
+import userService from "../services/userService";
+import auth from "../services/authService";
 
 class SignupForm extends Form {
   state = {
@@ -18,7 +19,13 @@ class SignupForm extends Form {
 
   doSubmit = async () => {
     try {
-      await userService.signup(this.state.data);
+      const response = userService.signup(this.state.data);
+
+      // TODO: extract access token from body before passing.
+      // Server on sign up should return just the access token.
+      // When jwt is implemented, respone shall be extracted from either body or custom header
+      // For now assuming response is the jwt or access token
+      auth.loginWithJwt(response);
 
       // signup should return a jwt as well, this should be stored in local storage too.
       // redirecting for now to dashboard
