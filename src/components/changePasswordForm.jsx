@@ -22,7 +22,7 @@ class ChangePasswordForm extends Form {
   render() {
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1>Change Password</h1>
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("currentPassword", "Current Password", "password")}
           {this.renderInput("newPassword", "New Password", "password")}
