@@ -27,6 +27,7 @@ class App extends Component {
 
   render() {
     const { user } = this.state;
+    console.log("User during App.js render: " + user);
     return (
       <React.Fragment>
         <ToastContainer />
@@ -39,7 +40,12 @@ class App extends Component {
             <Route path="signup" element={<SignupForm />} />
             <Route path="forgotpassword" element={<ForgotPassword />} />
             <Route exact path="not-found" element={<NotFound />} />
-            <Route path="dashboard" element={<Dashboard />}>
+            <Route
+              path="dashboard"
+              element={
+                user !== null ? <Dashboard /> : <Navigate to="/login" replace />
+              }
+            >
               <Route index element={<Quotations />} />
               <Route path="quotations" element={<Quotations />} />
               <Route path="quotations/:id" element={<QuotationForm />} />

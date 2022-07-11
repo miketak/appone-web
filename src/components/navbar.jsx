@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
-import logger from "../services/logService";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Navbar = ({ user }) => {
