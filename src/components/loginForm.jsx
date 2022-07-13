@@ -25,7 +25,7 @@ class LoginForm extends Form {
       this.props.navigate("/dashboard", { replace: true });
       window.location.reload();
     } catch (ex) {
-      if (ex.response && ex.response.state === 400) {
+      if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
         errors.email = ex.response.data;
         this.setState({ errors });

@@ -27,7 +27,7 @@ export function getCurrentUser() {
     // TODO: Change this when jwt is implemented
     //       on backend
     if (jwt && jwt !== -1) {
-      console.log("Login successful with jwt:" + jwt);
+      // console.log("Login successful with jwt:" + jwt);
       return { user: { name: "Fake Name" } };
     }
     return null;

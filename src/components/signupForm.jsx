@@ -19,7 +19,9 @@ class SignupForm extends Form {
 
   doSubmit = async () => {
     try {
-      const response = userService.signup(this.state.data);
+      const response = await userService.signup(this.state.data);
+
+      // console.log(response);
 
       // TODO: extract access token from body before passing.
       // Server on sign up should return just the access token.
@@ -34,9 +36,9 @@ class SignupForm extends Form {
       this.props.history("/dashboard", { replace: true });
       window.location.reload();
     } catch (ex) {
-      if (ex.response && ex.response.state === 400) {
+      if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
-        errors.username = ex.response.data;
+        errors.email = ex.response.data;
         this.setState({ errors });
       }
     }
