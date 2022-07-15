@@ -9,10 +9,12 @@ http.setJwt(getJwt());
 
 export async function login(email, password) {
   const { data: jwt } = await http.post(apiEndPoint, { email, password });
+  console.log(jwt)
   localStorage.setItem(tokenKey, jwt);
 }
 
 export function loginWithJwt(jwt) {
+  console.log(jwt);
   localStorage.setItem(tokenKey, jwt);
 }
 
@@ -23,14 +25,7 @@ export function logout() {
 export function getCurrentUser() {
   try {
     const jwt = localStorage.getItem(tokenKey);
-    // return jwtDecode(jwt);
-    // TODO: Change this when jwt is implemented
-    //       on backend
-    if (jwt && jwt !== -1) {
-      // console.log("Login successful with jwt:" + jwt);
-      return { user: { name: "Fake Name" } };
-    }
-    return null;
+    return jwtDecode(jwt);
   } catch (error) {
     return null;
   }

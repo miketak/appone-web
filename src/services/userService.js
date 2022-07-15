@@ -1,6 +1,5 @@
 import http from "./httpService";
 import config from "../config.json";
-// import logger from "./logService";
 
 const apiEndPoint = config.apiUrl + "/users";
 

@@ -4,7 +4,8 @@ import { Outlet } from "react-router-dom";
 import auth from "../services/authService";
 
 const SideBar = () => {
-  const { user } = auth.getCurrentUser();
+  const user = auth.getCurrentUser();
+  console.log(user);
   return (
     <ul className="navbar-nav">
       <li>

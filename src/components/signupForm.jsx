@@ -20,19 +20,7 @@ class SignupForm extends Form {
   doSubmit = async () => {
     try {
       const response = await userService.signup(this.state.data);
-
-      // console.log(response);
-
-      // TODO: extract access token from body before passing.
-      // Server on sign up should return just the access token.
-      // When jwt is implemented, respone shall be extracted from either body or custom header
-      // For now assuming response is the jwt or access token
-      console.log("Response now is the jwt of: " + response);
-      auth.loginWithJwt(response);
-
-      // signup should return a jwt as well, this should be stored in local storage too.
-      // redirecting for now to dashboard
-      // Assumption: If we are here, everything was successful.
+      auth.loginWithJwt(response.headers["x-auth-token"]);
       this.props.history("/dashboard", { replace: true });
       window.location.reload();
     } catch (ex) {
