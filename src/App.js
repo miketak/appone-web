@@ -1,6 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import 'bootstrap/dist/js/bootstrap.min.js';
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import SignupForm from "./components/signupForm";

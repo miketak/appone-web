@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "./sidebar";
+import Navbar from "./navbar";
 import "./dashboard.css";
-import "bootstrap/dist/css/bootstrap.css";
 
 class Dashboard extends Component {
   state = {};
@@ -11,7 +11,7 @@ class Dashboard extends Component {
       <React.Fragment>
         <div
           className="offcanvas offcanvas-start sidebar-nav bg-dark"
-          tabindex="-1"
+          tabIndex="-1"
           id="sidebar"
         >
           <div className="offcanvas-body p-0">

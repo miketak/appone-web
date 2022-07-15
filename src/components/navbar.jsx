@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.css";
-import auth from "../services/authService";
 
 const Navbar = ({ user }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
+        {user && 
+        (<React.Fragment>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar"
+            aria-controls="offcanvasExample"
+          >
+            <span className="navbar-toggler-icon" data-bs-target="#sidebar"></span>
+          </button>
+        </React.Fragment>)}
         <a
           className="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
           href="#"
