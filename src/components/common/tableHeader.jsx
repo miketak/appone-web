@@ -1,4 +1,3 @@
-import { times } from "lodash";
 import React, { Component } from "react";
 
 // columns: array
@@ -20,9 +19,9 @@ class TableHeader extends Component {
   renderSortIcon = (column) => {
     // TODO: Icon not rendering. Look at this later
     const { sortColumn } = this.props;
-    if (column.path != sortColumn.path) return null;
+    if (column.path !== sortColumn.path) return null;
 
-    if (sortColumn.order == "asc") {
+    if (sortColumn.order === "asc") {
       // *i.fa.fa-sort-a-asc
       return <i className="fa fa-sort-a-asc" />;
     }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Outlet } from "react-router-dom";
 import SideBar from "./sidebar";
-import Navbar from "./navbar";
 import "./dashboard.css";
 
 class Dashboard extends Component {

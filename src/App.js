@@ -15,7 +15,6 @@ import QuotationForm from "./components/quotationForm";
 import LoginForm from "./components/loginForm";
 import Logout from "./components/logout";
 import auth from "./services/authService";
-import logger from "./services/logService";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
