@@ -37,7 +37,7 @@ class LoginForm extends Form {
       <div className="mt-5 pt-3">
         <h1>Login</h1>
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("email", "Username")}
+          {this.renderInput("email", "Email", "email")}
           {this.renderInput("password", "Password", "password")}
           {this.renderButton("Login")}
         </form>
